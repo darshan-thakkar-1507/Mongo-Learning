@@ -37,4 +37,15 @@ public class TaskController {
 		return ResponseEntity.ok(taskService.deleteById(id));
 	}
 
+	@PostMapping("task/save/{noOfItems}/{startNo}")
+	private ResponseEntity saveMultipleRandomRecords(@PathVariable Long noOfItems, @PathVariable Integer startNo) {
+		return ResponseEntity.ok(taskService.saveRandomItems(noOfItems, startNo));
+	}
+
+	@DeleteMapping("task/delete")
+	private ResponseEntity deleteAll() {
+		taskService.deleteAll();
+		return ResponseEntity.noContent().build();
+	}
+
 }

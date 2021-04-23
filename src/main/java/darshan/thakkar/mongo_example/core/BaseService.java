@@ -11,4 +11,6 @@ public interface BaseService<T> {
 	T update(String id, T requestedEl);
 
 	boolean deleteById(String id);
+
+	int saveRandomItems(Long noOfItems, Integer startNo);
 }
